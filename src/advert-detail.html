@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Satal</title>
+</head>
+
+<body class="rtl">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo-white.svg" width="50" alt="">
+        </a>
+
+        <div class="search-top">
+            <input type="text" name="search">
+            <a href="" class="searchBtn">
+                <label>جستجو</label>
+                <i class="satal-search"></i>
+            </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#satalNavbar" aria-controls="satalNavbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span></span><span></span><span></span><span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="satalNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="./index.html">صفحه اصلی</a></li>
+                <li class="nav-item"><a class="nav-link" href="./adverts.html">لیست آگهی ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="./advert-detail.html">صفحه نهایی</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">پشتیبانی و قوانین</a></li>
+                <li class="nav-item"><a href="" class="btn btn-warning">ارسال رایگان آگهی</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="input-group"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb box-shadow data-breadcrumb">
+                <template>
+                    <li class="breadcrumb-item"><a href="{{url}}">{{title}}</a></li>
+                </template>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box-shadow data-header">
+                    <template>
+                        <h2>{{title}}</h2>
+                        <div>
+                            <span class="badge badge-secondary">{{ladder}}</span>
+                            <span class="badge badge-secondary">{{Immediate}}</span>
+                            <span class="badge badge-warning">{{date}}</span>
+                        </div>
+                    </template>
+                </div>
+                <div class="ads-info box-shadow">
+                    <div class="info-table table-responsive">
+                        <table class="table table-striped table-hover data-list_data">
+                            <template>
+                                <tr>
+                                    <td>{{title}}</td>
+                                    <td>
+                                        <span data-if="'{{format}}' == 'string'">{{value}}</span>
+                                        <a data-if="'{{format}}' == 'link'" href="{{url}}">{{value}}</a>
+                                    </td>
+                                </tr>
+                            </template>
+                        </table>
+                    </div>
+                </div>
+                <div class="box-shadow data-description"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-slider box-shadow">
+                    <div class="slider-nav">
+                        <div><img src="img/article1.jpg" alt=""></div>
+                        <div><img src="img/article2.jpg" alt=""></div>
+                        <div><img src="img/article3.jpg" alt=""></div>
+                        <div><img src="img/article4.jpg" alt=""></div>
+                        <div><img src="img/article1.jpg" alt=""></div>
+                        <div><img src="img/article2.jpg" alt=""></div>
+                    </div>
+                    <div class="slider-thumb">
+                        <div><img src="img/article1.jpg" alt=""></div>
+                        <div><img src="img/article2.jpg" alt=""></div>
+                        <div><img src="img/article3.jpg" alt=""></div>
+                        <div><img src="img/article4.jpg" alt=""></div>
+                        <div><img src="img/article1.jpg" alt=""></div>
+                        <div><img src="img/article2.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="box-shadow text-left">
+                    <button class="btn btn-satal"><i class="satal-bookmark"></i>نشان کردن</button>
+                    <button class="btn btn-secondary" data-toggle="modal" data-target="#agreement-modal"><i class="satal-phone"></i>دریافت اطلاعات تماس</button>
+                    <ul class="list-group data-contact">
+                        <template>
+                            <li><b>شماره تماس : </b>{{Mobile}}</li>
+                            <li><b>ایمیل : </b>{{Email}}</li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="box-shadow">
+                    <div class="list-group p-0 data-links">
+                        <template>
+                            <a class="list-group-item" href="{{url}}">{{title}}</a>
+                        </template>
+                    </div>
+                    <hr>
+                    <div class="data-share">
+                        <template>
+                            <a href="{{url}}">{{title}}</a>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-shadow">
+            <p>سایت سات￼￼ آل تز هیچگونه منفعت و مسئولیتی در قبال معامله شما ندارد. با مطالعه ی <a href="" data-toggle="modal" data-target="#privacy-modal">راهنمای خرید امن</a>، آسوده تر￼￼ معامله کنید</p>
+        </div>
+    </div>
+
+    <div class="modal fade" id="privacy-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">راهنمای خرید امن</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="agreement-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">قوانین و مقررات</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary getContactNum" data-dismiss="modal">قبول دارم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

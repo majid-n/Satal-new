@@ -1,0 +1,19 @@
+@import './main.scss';
+@import './nouislider.min.css';
+@import './flexdatalist';
+@import './select';
+@import './leaflet';
+@import './uploader';
+@import './customs';
+
+.advert-date {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    font-size: 15px;
+    input {
+        text-align: left;
+        border: none;
+    }
+}

@@ -1,0 +1,59 @@
+@import './main.scss';
+@import "./flexdatalist";
+
+.cities-container {
+    position: relative;
+    font-size: 0;
+    button {
+        width: calc(100% / 5 - 10px);
+        padding: 0;
+        margin: 5px;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        border-radius: $border-radius;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        @include media($max_xlarge) {
+            width: calc(100% / 4 - 10px);
+        }
+        @include media($max_large) {
+            width: calc(100% / 3 - 10px);
+        }
+        @include media($max_medium) {
+            width: calc(100% / 2 - 10px);
+        }
+        @include media('max-width: 400px') {
+            width: calc(100% - 10px);
+        }
+        .img-container {
+            overflow: hidden;
+            img {
+                width: 100%;
+                @include transition();
+            }
+        }
+        .title {
+            padding: 5px;
+            position: absolute;
+            line-height: 2.5;
+            height: 50px;
+            font-size: 16px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: -moz-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent), color-stop(47%, rgba(0,0,0,0.6)), color-stop(100%, rgba(0,0,0,0.8)));
+            background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 47%, rgba(0,0,0,0.8) 100%);
+            background: -o-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 47%, rgba(0,0,0,0.8) 100%);
+            background: -ms-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 47%, rgba(0,0,0,0.8) 100%);
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 47%, rgba(0,0,0,0.8) 100%);
+        }
+        &:hover {
+            img {
+                transform: scale(1.2) rotate(3deg);
+            }
+        }
+    }
+}

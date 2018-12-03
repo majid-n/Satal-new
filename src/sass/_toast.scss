@@ -1,0 +1,77 @@
+﻿$toast-height: 50px;
+$main-gutter: 10px;
+
+.toast-container {
+    height: $toast-height;
+    max-height: $toast-height;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .toast {
+        position: fixed;
+        bottom: $main-gutter;
+        padding: $main-gutter;
+        z-index: 1002;
+        @include transition();
+        @include box-shadow();
+        @include border-radius();
+        opacity: 0;
+        right: -250px;
+        color: #555;
+        background: #fff;
+
+
+        & > .toast-message {
+            .toast-message-icon {
+                width: 15px;
+                height: 15px;
+                line-height: 15px;
+                border-radius: 50%;
+                // background: #fff;
+                text-align: center;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 10px;
+                color: #fff;
+            }
+        }
+
+        @for $i from 1 through 100 {
+            &:nth-child(#{$i}) {
+                bottom: (($i + 1) * $main-gutter) + (($i - 1) * $toast-height);
+            }
+        }
+
+        &.toast-info { background-color: rgb(161, 252, 255); }
+        &.toast-danger { background-color: rgb(255, 152, 152); color: #fff }
+        &.toast-warning { background-color: rgb(255, 206, 142); color: #fff }
+        &.toast-success { background-color: rgb(196, 255, 196); }
+
+        &.toast-closable {
+            padding-left: 30px;
+
+            & .toast-close {
+                position: absolute;
+                left: 5px;
+                top: 0;
+                margin: 0 5px;
+                line-height: $toast-height;
+                display: inline-block;
+                padding-top: 2px;
+
+                & > i {
+                    color: inherit;
+                    font-size: inherit;
+                }
+            }
+        }
+
+        &.show {
+            opacity: 1;
+            right: $main-gutter;
+        }
+    }
+}

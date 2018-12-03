@@ -1,0 +1,187 @@
+﻿$color-info: black;
+$avatar-size: 50px;
+
+.upload-container {
+    border: dashed 1px #ccc;
+    position: relative;
+    border-radius: $border-radius;
+    min-height: 100px;
+    background: #fff;
+    cursor: pointer;
+    padding: 10px;
+
+    & > i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+        margin-left: -30px;
+        font-size: 60px;
+        color: $color-info;
+        pointer-events: none;
+    }
+
+    &.dz-success {
+        & > i {
+            display: none;
+        }
+    }
+
+    .dz-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        color: #888;
+        font-size: 18px;
+        transform: translate(-50%, -50%);
+        @include user-select();
+    }
+    
+    &.dz-started {
+        .dz-message { display: none; }
+    }
+}
+
+.uploader-preview-container {
+    @include transition();
+    width: calc(100% / 5 - 10px);
+    display: inline-block;
+    
+    &:not(:last-child) {
+        margin-left: 10px;
+    }
+    img {
+        width: 100%
+    }
+
+    & > .uploader-thumbnail-container {
+        @include transition();
+        filter: grayscale(0);
+        position: relative;
+
+        & > .uploader-progress-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.2);
+            visibility: hidden;
+            display: none;
+        }
+    }
+
+    &.uploading {
+        & > .uploader-thumbnail-container {
+            opacity: 0.5 !important;
+            filter: grayscale(100%);
+        }
+
+        & > .uploader-progress-container {
+            visibility: visible;
+            display: block;
+        }
+    }
+
+    .extension {
+        display: block;
+        text-align: center;
+        font-size: 32px;
+        text-transform: lowercase;
+        border: solid 1px rgba(0,0,0,0.12);
+        width: 40%;
+        margin: 0 auto;
+        background: #fff;
+        direction: ltr;
+        font-family: tahoma;
+        font-size: 24px
+    }
+
+    &.dz-error {
+        animation: rubberBand .5s ease;
+    }
+
+    .error-container {
+        padding: 0 5px;
+        color: #fff;
+        background: $red;
+        /*border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;*/
+        & > span {
+            color: inherit;
+        }
+    }
+}
+
+
+.user-avatar-container {
+    // $avatar-size: 150px;
+    margin: 0 auto;
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+
+
+    .user-avatar-uploader {
+        width: $avatar-size;
+        height: $avatar-size;
+        border: solid 1px #ccc;
+        cursor: pointer;
+        border-radius: 50%;
+        background: gray;
+        @include transition();
+
+        & > i {
+            line-height: $avatar-size;
+            color: $color-info;
+            font-size: 32px;
+            pointer-events: none;
+        }
+
+        &.dz-drag-hover, &:hover {
+            transform: scale(1.1);
+            background: blue;
+            border-color: darken(blue,5%);
+            animation: pulse .5s infinite;
+
+            & > i {
+                animation: bounce .5s infinite;
+                text-shadow: 1px 1px 1px #fff;
+            }
+        }
+    }
+
+    &:hover {
+        div.controls {
+            top: 50%;
+            right: 50%;
+            margin-right: -15px;
+        }
+    }
+
+    div.controls {
+        top: 50%;
+        margin-top: -15px;
+        right: 150%;
+        transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1)
+    }
+
+    .uploaded-item {
+        border-radius: 100%;
+        overflow: hidden;
+        width: $avatar-size;
+        height: $avatar-size;
+    }
+
+    .uploader-preview-container.dz-error {
+        margin-top: -136px;
+        width: 102px;
+        margin-right: 25px;
+    }
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Satal</title>
+  </head>
+
+  <body class="rtl">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo-white.svg" width="50" alt="">
+        </a>
+
+        <div class="search-top">
+            <input type="text" name="search">
+            <a href="" class="searchBtn">
+                <label>جستجو</label>
+                <i class="satal-search"></i>
+            </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#satalNavbar" aria-controls="satalNavbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span></span><span></span><span></span><span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="satalNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="./index.html">صفحه اصلی</a></li>
+                <li class="nav-item"><a class="nav-link" href="./adverts.html">لیست آگهی ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="./advert-detail.html">صفحه نهایی</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">پشتیبانی و قوانین</a></li>
+                <li class="nav-item"><a href="" class="btn btn-warning">ارسال رایگان آگهی</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="input-group"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container box-shadow">
+        <form class="customForm form-container" id="registerEstate" data-submit-ajax="true" data-url="http://service.esay.ir/Api/Estate">
+            <div><h2>ثبت رایگان آگهی</h2></div>
+            <div class="advert-date"><input type="text" class="datePicker" disabled></div>
+            <div>تکمیل گزینه های دارای علامت ( * ) اجباری می باشد.</div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>انتخاب شهر</label>
+                    <input
+                        type="text"
+                        value="1"
+                        data-name="CityID"
+                        class="form-control autocomplete"
+                        placeholder="شهر" />
+                    <i class="satal-location form-icon"></i>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>انتخاب محله</label>
+                    <input
+                        type="text"
+                        data-name="NeighborhoodID"
+                        class="form-control autocomplete"
+                        placeholder="محله" />
+                    <i class="satal-location form-icon"></i>
+                </div>
+                <div class="col-md-12">
+                    <!-- <div class="map" name="map" data-map="true"></div> -->
+                    <div class="map" data-map="true"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Checkbox -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="check-title">نحوه مشارکت</label>
+                    <label class="customCheck">
+                        <input type="radio" name="OwnershipTypeID" value="1" checked /> دارنده ملک
+                        <div class="indicator"></div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="radio" name="OwnershipTypeID" value="2" /> سازنده ملک
+                        <div class="indicator"></div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="radio" name="OwnershipTypeID" value="3" /> سرمایه گذار
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="customCheck">
+                        <input type="checkbox" name="IsSuburb" data-validator-agreement="انتخاب کنید" /> در حومه شهر است
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>نوع ودیعه</label>
+                    <select class="form-control" name="EstateCreditTypeID">
+                        <option value="1">قیمت مقطوع</option>
+                        <option value="2">مجانی</option>
+                        <option value="3">توافقی ( تماس بگیرید)</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>نوع اجاره</label>
+                    <select class="form-control" name="EstateRentTypeID">
+                        <option value="1">قیمت مقطوع</option>
+                        <option value="2">مجانی</option>
+                        <option value="3">توافقی ( تماس بگیرید)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>ودیعه (تومان)</label>
+                    <input type="text" name="Price" class="form-control" placeholder="۱۰۰،۰۰۰،۰۰۰ (صد میلیون تومان)" />
+                    <i class="satal-price form-icon"></i>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>اجاره ماهیانه (تومان)</label>
+                    <input type="text" name="Price2" class="form-control" placeholder="۳۰۰،۰۰۰ (سیصد هزار تومان)" />
+                    <i class="satal-price form-icon"></i>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Radios -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="check-title">نوع آگهی:</label>
+                    <label class="customCheck">
+                        <input type="radio" name="AdvertTypeID" checked /> ارائه
+                        <div class="indicator"></div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="radio" name="AdvertTypeID" /> درخواستی
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="check-title">نوع آگهی دهنده:</label>
+                    <label class="customCheck">
+                        <input type="radio" name="AdvertSenderTypeID" checked /> شخصی
+                        <div class="indicator"></div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="radio" name="AdvertSenderTypeID" /> مشاور املاک
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>متراژ (متر مربع)</label>
+                    <input type="text" name="Area" class="form-control" placeholder="50" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label>تعداد اتاق</label>
+                    <select class="form-control" name="RoomID">
+                        <option value="1">یک</option>
+                        <option value="2">دو</option>
+                        <option value="3">سه</option>
+                        <option value="4">چهار</option>
+                        <option value="5">پنج یا بیشتر</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="m-0">سال ساخت</label>
+                    <div class="customRange single year-slider">
+                        <div class="slider" data-range="true" name="BuildingYear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>تصاویر آگهی</label>
+                    <div class="dropzone upload-container" id="fileUpload" name="Images"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>شماره موبایل</label>
+                    <input
+                        type="text"
+                        name="Mobile"
+                        class="form-control"
+                        data-validator-required="لطفا شماره موبایل را وارد کنید"
+                        placeholder="شماره موبایل شما (**** *** 091)"
+                        data-help="کد تأیید به شماره موبایل شما ارسال خواهد شد. تماس و چت نیز با این شماره انجام می‌شود"/>
+                    <i class="satal-phone form-icon"></i>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>ایمیل</label>
+                    <input
+                        type="text"
+                        name="Email"
+                        class="form-control"
+                        data-validator-required="لطفا ایمیل را وارد کنید"
+                        placeholder="ایمیل شما (email@gmail.com)"
+                        data-help="آدرس ایمیل خود را به درستی وارد کنید. لینک «مدیریت آگهی» به ایمیل شما ارسال می‌شود"/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="customCheck">
+                        <input type="checkbox" data-serilization="ignore" name="noEmail" /> عدم نمایش ایمیل کاربر
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="customCheck">
+                        <input type="checkbox" data-serilization="ignore" name="chat" /> فعال کردن چت
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="customCheck">
+                        <input type="checkbox" name="HasOfficeDoc" /> سند اداری
+                        <div class="indicator"></div>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>عنوان آگهی</label>
+                    <input
+                        type="text"
+                        name="Title"
+                        class="form-control"
+                        data-validator-required="لطفا عنوان آگهی را وارد کنید"
+                        data-help="از عنوان های کوتاه و مفید استفاده کنید. اشاره به محله‌ی ملک و متراژ آن موجب بیشتر دیده شدن آگهی می‌شود." />
+                </div>
+                <div class="form-group col-md-12">
+                    <label>توضیحات آگهی</label>
+                    <textarea class="form-control" name="Comment" data-help="تمام جزئیات و نکات قابل توجه آگهی خود را به صورت کامل و دقیق ذکر کنید؛ توجه به این مورد به صورت قابل توجهی ابهامات کاربران را برطرف خواهد کرد و شانس موفقیت آگهی شما را افزایش خواهد داد." rows="7"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="customCheck">
+                    <input type="checkbox" name="terms" data-validator-agreement="انتخاب کنید" /> از قوانین ثبت آگهی در سایت مطلع و با شرایط آن موافق می نمایم.
+                    <div class="indicator"></div>
+                </label>
+            </div>
+
+            <div class="text-left">
+                <button type="submit" class="btn customBtn btn-submit">ارسال آگهی</button>
+            </div>
+        </form>
+    </div>
+  </body>
+</html>

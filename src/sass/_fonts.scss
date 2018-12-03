@@ -1,2 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900');
+@font-face {
+	font-family: "samim";
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/samim.eot');
+	src: url('../fonts/samim.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/samim.woff') format('woff'),
+		 url('../fonts/samim.ttf') format('truetype');
+}
+@font-face {
+	font-family: "samim";
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/samim-digits.eot');
+	src: url('../fonts/samim-digits.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/samim-digits.woff') format('woff'),
+		 url('../fonts/samim-digits.ttf') format('truetype');
+}
+@font-face {
+	font-family: "satal";
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/satal.eot');
+	src: url('../fonts/satal.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/satal.svg') format('svg'),
+		 url('../fonts/satal.woff') format('woff'),
+		 url('../fonts/satal.ttf') format('truetype');
+}
 
+[class^="satal-"],
+[class*=" satal-"] {
+    font-family: 'satal' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.satal-angle-down:before {content: "\e900";}
+.satal-angle-up:before {content: "\e901";}
+.satal-angle-right:before {content: "\e902";}
+.satal-angle-left:before {content: "\e903";}
+.satal-instagram:before {content: "\e904";}
+.satal-facebook:before {content: "\e905";}
+.satal-twitter:before {content: "\e906";}
+.satal-flag:before {content: "\e907";}
+.satal-phone:before {content: "\e908";}
+.satal-bookmark:before {content: "\e909";}
+.satal-link:before {content: "\e90a";}
+.satal-search:before {content: "\e90b";}
+.satal-timer:before {content: "\e90c";}
+.satal-grid:before {content: "\e90d";}
+.satal-price:before {content: "\e90e";}
+.satal-location:before {content: "\e90f";}
+.satal-list:before {content: "\e910";}

@@ -1,0 +1,38 @@
+@import "./main.scss";
+@import "./slick";
+
+.img-slider {
+    * {
+        direction: rtl;
+    }
+    .slider-nav {
+        border-radius: $border-radius $border-radius 0 0;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        img {
+            width: 100%;
+        }
+    }
+    .slider-thumb {
+        margin-top: 10px;
+        border-radius: 0 0 $border-radius $border-radius;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        img {
+            filter: grayscale(1);
+            opacity: .5;
+        }
+        .slick-current.slick-center {
+            outline: none;
+            img {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.info-table {
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+}

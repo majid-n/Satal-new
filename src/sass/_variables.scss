@@ -1,35 +1,36 @@
-/* Device = Most of the Smartphones Mobiles (Portrait) */
-$screen-xxs-min: 320px;
-$screen-xxs-max: 480px;
+$main-color:#ff8800;
+$sec-color:#232f3e;
+$green:#88a92e;
+$red:#e04f67;
 
-/* Device = Low Resolution Tablets, Mobiles (Landscape) */
-$screen-xs-min: 481px;
-$screen-xs-max: 767px;
+$dir: rtl;
+$dir-inverse: ltr;
+$align: right;
+$align-inverse: left;
 
-/* Device = Tablets, Ipads (portrait) */
-$screen-sm-min: 768px;
-$screen-sm-max: 1024px;
+$font-family: "samim", arial;
+$icon-font-family: "satal";
+$font-size: 14px;
+$border-radius: 3px;
 
-/* Device = Laptops, Desktops */
-$screen-md-min: 1025px;
-$screen-md-max: 1280px;
+$down-icon: '\e900';
+$up-icon: '\e901';
+$right-icon: '\e902';
+$left-icon: '\e903';
 
-/* Device = Desktops */
-$screen-lg-min: 1281px;
-$screen-lg-max: 1440px;
+$min_small: "min-width: 480px";
+$min_medium: "min-width: 768px";
+$min_large: "min-width: 992px";
+$min_xlarge: "min-width: 1200px";
+$max_small: "max-width: 479px";
+$max_medium: "max-width: 767px";
+$max_large: "max-width: 991px";
+$max_xlarge: "max-width: 1199px";
 
-/* Higher Resolution Screens */
-$screen-xlg-min: 1441px;
-$screen-xlg-max: 2560px;
-
-$font-family-playfair: 'Playfair Display', serif;
-
-$font-weight-thin:          100;
-$font-weight-exlight:       200;
-$font-weight-light:         300;
-$font-weight-regular:       400;
-$font-weight-medium:        500;
-$font-weight-semibold:      600;
-$font-weight-bold:          700;
-$font-weight-exbold:        800;
-$font-weight-black:         900;
+@mixin media($size, $size1:'') {
+  @if $size1 != '' {
+    @media only screen and (#{$size}) and (#{$size1}) { @content; }
+  } @else {
+    @media only screen and (#{$size}) { @content; }
+  }
+}
