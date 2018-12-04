@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <h2 align="center">webpack-sass-bootstrap-boilerplate</h2>
 
@@ -110,3 +111,6 @@ experiment with the changes live.)
 
 # Licence
 Code released under the [MIT License](https://github.com/shaminmeerankutty/webpack-sass-bootstrap-boilerplate/blob/master/LICENSE.md).
+=======
+# Satal-new
+>>>>>>> d28afe8c1a357325e641e86c361c56645273bbaf
